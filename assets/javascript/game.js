@@ -1,58 +1,82 @@
 
-//todo: dictionary/list of words
-var words;
 
-//todo: array of letters that have been guessed
-var guessedLetters;
-
-//todo: wins
-var wins = 0;
-
-//todo: max Guesses
-var MAX_GUESS_COUNT = 12;
-
-//todo: guessesRemaining
-var guessesRemaining = MAX_GUESS_COUNT;
-
-//todo: currentWord
-var currentWord;
 
 //todo: newGame function
 //reset guesses
 //pick new word
 
-class GameLetter {
-	constructor (letter) {
-		this.letter = letter;
-		this.guessed = false;
-	}
+// BEGIN GameLetter
 
-	toString() {
-		console.log(this.letter + ' ' + this.guessed);
-	}
+function GameLetter (letter) {
+	this.letter = letter;
+	this.guessed = false;	
 }
 
-class GameWord {
-	constructor (word) {
-		this.letters = this.makeLetters(word);
-	}
-
-	makeLetters(word) {
-		this.letters = [];
-		for (var x = 0, len = word.length; x < len; x++) {
-			this.letters.push(new GameLetter(word.charAt(x)));
-		}
-	}
-
-	toString() {
-		for (letter in this.letters){
-			console.log(letter.toString());
-		}
-	}	
+GameLetter.prototype.toString = function() {
+	return this.letter + ' (' + (this.guessed === true ? 'guessed' : 'not guessed') + ')';
 }
 
-class Game {
+// END GameLetter
+
+// BEGIN GameWord
+
+function GameWord(word) {
+	this.letters = this.makeLetters(word);
 }
+
+GameWord.prototype.makeLetters = function(word) {
+	var letters = [];
+	for (var x = 0, len = word.length; x < len; x++) {
+		letters.push(new GameLetter(word.charAt(x)));
+	}
+
+	return letters;
+}
+
+GameWord.prototype.toString = function() {
+	return this.letters ? this.letters.join(',') : '';
+}
+
+GameWord.prototype.handleGuess = function(guess) {
+	//todo: iterate thru letters looking for guess
+	//todo: if guess is found, set local var to true, set letter.guessed = true
+	//todo: return true if the letter was found
+}
+
+// END GameWord
+
+// BEGIN Game
+
+function Game() {
+	this.MAX_GUESS_COUNT = 12;
+	this.WORDS = 'red,green,blue,yellow,orange,purple,brown,black,white'.split(',');
+
+	this.wins = 0;
+
+	this.guessedLetters = [];
+	this.currentWord = this.getNewWord();
+	this.guessesRemaining = MAX_GUESS_COUNT;
+}
+
+Game.prototype.reset = function() {
+	this.guessedLetters = [];
+	this.currentWord = this.getNewWord();
+	this.guessesRemaining = MAX_GUESS_COUNT;
+}
+
+Game.prototype.getNewWord = function() {
+	//todo: return random word from this.WORDS as a GameWord
+}
+
+Game.prototype.handleGuess = function(guess) {
+	//todo: call currentWord.handleGuess(guess)
+	//todo: if result is true, add letter to guessedLetters
+	//todo: if result is false, reduce guessesRemaining
+	//todo: check for gameover/win
+	//todo: update ui
+}
+
+// END Game
 
 document.onkeyup = function(event) {
 	// Captures the key press, converts it to lowercase, and saves it to a variable.
