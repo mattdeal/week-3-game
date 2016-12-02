@@ -69,11 +69,38 @@ Game.prototype.getNewWord = function() {
 }
 
 Game.prototype.handleGuess = function(guess) {
-	//todo: call currentWord.handleGuess(guess)
-	//todo: if result is true, add letter to guessedLetters
-	//todo: if result is false, reduce guessesRemaining
-	//todo: check for gameover/win
-	//todo: update ui
+	if (this.guessedLetters.indexOf(guess) < 0) {
+		guessedLetters.push(guess);
+
+		if (currentWord.handleGuess(guess) === true) {
+			console.log('currentWord contains ' + guess);
+		} else {
+			console.log('currentWord does not contain ' + guess);
+			this.guessesRemaining--;
+		}
+
+		this.checkGameState();
+		this.updateUi();
+	} else {
+		console.log('you already guessed ' + guess);
+	}
+}
+
+Game.prototype.checkGameState = function() {
+	//todo: check for 0 remaining guesses
+	//todo: check for solved word
+
+	//increment wins if solved
+}
+
+Game.prototype.updateUi = function() {
+	//todo: show wins
+	//todo: show current word
+	//todo: show guessed letters
+	//todo: show remaining guesses
+
+	//todo: show status ongoing, win, lose
+	//todo: show play again option if necessary
 }
 
 // END Game
