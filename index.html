@@ -4,24 +4,76 @@
 	<title>Hangman</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  	<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="assets/javascript/game.js"></script>
 </head>
 <body>
 	<div>TITLE GOES HERE</div>
+
 	<div>INSTRUCTIONS</div>
+
 	<div>Wins</div>
 	<div id="wins"></div>
+
 	<div>Current Word</div>
 	<div id="currentWord"></div>
+
 	<div>Guesses Remaining</div>
 	<div id="guesses"></div>
+
 	<div>Guessed Letters</div>
 	<div id="guessedLetters"></div>
+	
 	<div id="gameMessage"></div>
 
-	<script type="text/javascript">
-		var game = new Game();
-		game.updateUi();
+	<script>
+		var game;
+
+		$(document).ready(function() {
+			game = new Game();
+			updateUi();
+		});		
+
+		function updateUi() {
+			console.log('updateUi');
+
+			// show number of wins
+			$('#wins').html(game.wins);
+
+			// show current word
+			$('#currentWord').html(game.currentWord.toString());
+
+			// show guessed letters
+			$('#guessedLetters').html(game.guessedLetters.toString());
+
+			// show remaining guesses
+			$('#guesses').html(game.guessesRemaining);
+
+			// show play again option if necessary
+			var message = '';
+			if (game.gameWon === true) {
+				message = 'You Win.  Press any key to play again.';
+			} else if (game.gameOver === true) {
+				message = 'Game Over.  Press any key to play again.';
+			}
+
+			$('#gameMessage').html(message);
+		}
+
+		document.onkeyup = function(event) {
+			// Captures the key press, converts it to lowercase, and saves it to a variable.
+			var letter = String.fromCharCode(event.keyCode).toLowerCase();
+
+			//todo: test game state
+			if (game.gameOver === true || game.gameWon === true) {
+				game.reset();
+			}
+
+			// test against guessedLetters
+			game.handleGuess(letter);
+
+			updateUi();
+		};
 	</script>
 </body>
 </html>

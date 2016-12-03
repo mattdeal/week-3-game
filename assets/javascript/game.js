@@ -133,42 +133,4 @@ Game.prototype.checkGameState = function() {
 	}
 }
 
-Game.prototype.updateUi = function() {
-	//todo: show status ongoing, win, lose
-	document.getElementById('wins').textContent = this.wins;
-
-	// show current word
-	document.getElementById('currentWord').textContent = this.currentWord.toString();
-
-	// show guessed letters
-	document.getElementById('guessedLetters').textContent = this.guessedLetters.toString();
-
-	// show remaining guesses
-	document.getElementById('guesses').textContent = this.guessesRemaining;
-
-	//todo: show play again option if necessary
-	// document.getElementById('gameMessage').textContent = this.wins;
-	var message = '';
-	if (this.gameWon === true) {
-		message = 'You Win.  Press any key to play again.';
-	} else if (this.gameOver === true) {
-		message = 'Game Over.  Press any key to play again.';
-	}
-
-	document.getElementById('gameMessage').textContent = message;
-}
-
 // END Game
-
-document.onkeyup = function(event) {
-	// Captures the key press, converts it to lowercase, and saves it to a variable.
-	var letter = String.fromCharCode(event.keyCode).toLowerCase();
-
-	//todo: test game state
-	if (game.gameOver === true || game.gameWon === true) {
-		game.reset();
-	}
-
-	// test against guessedLetters
-	game.handleGuess(letter);
-};
