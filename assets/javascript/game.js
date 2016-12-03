@@ -1,10 +1,4 @@
 
-
-
-//todo: newGame function
-//reset guesses
-//pick new word
-
 // BEGIN GameLetter
 
 function GameLetter (letter) {
@@ -13,7 +7,8 @@ function GameLetter (letter) {
 }
 
 GameLetter.prototype.toString = function() {
-	return this.letter + ' (' + (this.guessed === true ? 'guessed' : 'not guessed') + ')';
+	return this.guessed === true ? this.letter : '_';
+	// return this.letter + ' (' + (this.guessed === true ? 'guessed' : 'not guessed') + ')';
 }
 
 // END GameLetter
@@ -34,13 +29,21 @@ GameWord.prototype.makeLetters = function(word) {
 }
 
 GameWord.prototype.toString = function() {
-	return this.letters ? this.letters.join(',') : '';
+	return this.letters ? this.letters.join(' ') : '';
 }
 
 GameWord.prototype.handleGuess = function(guess) {
-	//todo: iterate thru letters looking for guess
-	//todo: if guess is found, set local var to true, set letter.guessed = true
-	//todo: return true if the letter was found
+	var found = false;
+
+	// iterate thru letters looking for guess
+	for (var x = 0, len = this.letters.length; x < len; x++) {
+		if (this.letters[x] === guess) {
+			this.letters[x].guessed = true;
+			found = true;
+		}
+	}
+
+	return found;
 }
 
 GameWord.prototype.solve = function() {
@@ -75,7 +78,7 @@ Game.prototype.reset = function() {
 }
 
 Game.prototype.getNewWord = function() {
-	//todo: return random word from this.WORDS as a GameWord
+	return this.WORDS[Math.floor(Math.random() * this.WORDS.length)];
 }
 
 Game.prototype.handleGuess = function(guess) {
@@ -114,12 +117,20 @@ Game.prototype.checkGameState = function() {
 
 Game.prototype.updateUi = function() {
 	//todo: show status ongoing, win, lose
-	//todo: show play again option if necessary
+	document.getElementById('wins').textContent = this.wins;
 
-	//todo: show wins
+	//todo: show play again option if necessary
+	// document.getElementById('wins').textContent = this.wins;
+
 	//todo: show current word
+	document.getElementById('currentWord').textContent = this.currentWord.toString();
+
 	//todo: show guessed letters
+	document.getElementById('guessedLetters').textContent = this.guessedLetters.join(',');
+
 	//todo: show remaining guesses
+	document.getElementById('guesses').textContent = this.guessesRemaining;
+
 }
 
 // END Game
