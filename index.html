@@ -8,23 +8,260 @@
 	<script type="text/javascript" src="assets/javascript/game.js"></script>
 </head>
 <body>
-	<div>TITLE GOES HERE</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="jumbotron">
+					<!-- <h1 class="text-center">Hangman</h1> -->
 
-	<div>INSTRUCTIONS</div>
+					<div class="text-center">
+						<!-- todo: convert this to an image -->
+						<!-- http://ascii.co.uk/art/hangman -->
+						<pre class="logo"> _                                             
+| |                                            
+| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
+| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+| | | | (_| | | | | (_| | | | | | | (_| | | | |
+|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                    __/ |                      
+                   |___/                       
+						</pre>
+					</div>
+				</div>
+			</div>
+		</div> <!-- end title row -->
+		<div class="row">
+			<div class="col-md-6">
+				<div class="row">
+					<div class="col-md-2"></div> <!-- empty -->
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1 border-bottom">&nbsp;</div>
+					<div class="col-md-1 border-bottom">&nbsp;</div>
+					<div class="col-md-1 border-bottom">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-2"></div> <!-- empty -->
+				</div> <!-- end row 1 -->
+				<div class="row">
+					<div class="col-md-2"></div> <!-- empty -->
+					<div class="col-md-1 border-right">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1 border-right">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1"></div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-2"></div> <!-- empty -->
+				</div> <!-- end row 2 -->
+				<div class="row">
+					<div class="col-md-2"></div> <!-- empty -->
+					<div class="col-md-1 border-right">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1 part part-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-2"></div> <!-- empty -->
+				</div> <!-- end row 3 -->
+				<div class="row">
+					<div class="col-md-2"></div> <!-- empty -->
+					<div class="col-md-1 border-right">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1 part part-1">&nbsp;</div>
+					<div class="col-md-1 part part-1">&nbsp;</div>
+					<div class="col-md-1 part part-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-2"></div> <!-- empty -->
+				</div> <!-- end row 4 -->
+				<div class="row">
+					<div class="col-md-2"></div> <!-- empty -->
+					<div class="col-md-1 border-right">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1 part part-3">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1 part part-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1 part part-4">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-2"></div> <!-- empty -->
+				</div> <!-- end row 5 -->
+				<div class="row">
+					<div class="col-md-2"></div> <!-- empty -->
+					<div class="col-md-1 border-right">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1 part part-3">&nbsp;</div>
+					<div class="col-md-1 part part-2">&nbsp;</div>
+					<div class="col-md-1 part part-4">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-2"></div> <!-- empty -->
+				</div> <!-- end row 6 -->
+				<div class="row">
+					<div class="col-md-2"></div> <!-- empty -->
+					<div class="col-md-1 border-right">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1 part part-2">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-2"></div> <!-- empty -->
+				</div> <!-- end row 7 -->
+				<div class="row">
+					<div class="col-md-2"></div> <!-- empty -->
+					<div class="col-md-1 border-right">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1 part part-2">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-2"></div> <!-- empty -->
+				</div> <!-- end row 8 -->
+				<div class="row">
+					<div class="col-md-2"></div> <!-- empty -->
+					<div class="col-md-1 border-right">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1 part part-2">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-2"></div> <!-- empty -->
+				</div> <!-- end row 9 -->
+				<div class="row">
+					<div class="col-md-2"></div> <!-- empty -->
+					<div class="col-md-1 border-right">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1 part part-2">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-2"></div> <!-- empty -->
+				</div> <!-- end row 10 -->
+				<div class="row">
+					<div class="col-md-2"></div> <!-- empty -->
+					<div class="col-md-1 border-right">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1 part part-5">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1 part part-6">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-2"></div> <!-- empty -->
+				</div> <!-- end row 11 -->
+				<div class="row">
+					<div class="col-md-2"></div> <!-- empty -->
+					<div class="col-md-1 border-right">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1 part part-5">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1 part part-6">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-2"></div> <!-- empty -->
+				</div> <!-- end row 12 -->
+				<div class="row">
+					<div class="col-md-2"></div> <!-- empty -->
+					<div class="col-md-1 border-right">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-2"></div> <!-- empty -->
+				</div> <!-- end row 13 -->
+				<div class="row">
+					<div class="col-md-2"></div> <!-- empty -->
+					<div class="col-md-1 border-right">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-2"></div> <!-- empty -->
+				</div> <!-- end row 14 -->
+				<div class="row">
+					<div class="col-md-2"></div> <!-- empty -->
+					<div class="col-md-1 border-right">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-2"></div> <!-- empty -->
+				</div> <!-- end row 15 -->
 
-	<div>Wins</div>
-	<div id="wins"></div>
+				
+			</div> <!-- end hangman div -->
+			<div class="col-md-6">
+				<div class="text-center">
+					<div class="row">
+						<div class="col-md-12">
+							<p class="text-center">Press a letter to get started!</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div>Wins</div>
+							<p id="wins"></p>						
+						</div>
+					</div>
 
-	<div>Current Word</div>
-	<div id="currentWord"></div>
+					<div class="row">
+						<div class="col-md-12">
+							<div>Current Word</div>
+							<p id="currentWord"></p>
+						</div>
+					</div>
 
-	<div>Guesses Remaining</div>
-	<div id="guesses"></div>
+					<div class="row">
+						<div class="col-md-12">
+							<div>Guesses Remaining</div>
+							<p id="guesses"></p>
+						</div>
+					</div>
 
-	<div>Guessed Letters</div>
-	<div id="guessedLetters"></div>
+					<div class="row">
+						<div class="col-md-12">
+							<div>Guessed Letters</div>
+							<p id="guessedLetters"></p>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<p id="gameMessage"></p>						
+						</div>
+					</div>
+				</div>				
+			</div> <!-- end game state div -->
+		</div> <!-- end game row -->
+	</div>
+
+<!-- move into rows... -->
+
 	
-	<div id="gameMessage"></div>
 
 	<script>
 		var game;
@@ -49,30 +286,62 @@
 			// show remaining guesses
 			$('#guesses').html(game.guessesRemaining);
 
-			// show play again option if necessary
+			// show play again option if necessary or draw the hangman
 			var message = '';
+			var messageClass = '';
 			if (game.gameWon === true) {
 				message = 'You Win.  Press any key to play again.';
+				messageClass = 'text-success';
 			} else if (game.gameOver === true) {
 				message = 'Game Over.  Press any key to play again.';
+				messageClass = 'text-danger';
+
+				//todo: draw part 6
+				$('.part-6').html('\\\\\\');
+			} else if (game.guessesRemaining < 2) {
+				//todo: draw part 5
+				$('.part-5').html('///');
+			} else if (game.guessesRemaining < 3) {
+				//todo: draw part 4
+				$('.part-4').html('///');
+			} else if (game.guessesRemaining < 4) {
+				//todo: draw part 3
+				$('.part-3').html('\\\\\\');
+			} else if (game.guessesRemaining < 5) {
+				//todo: draw part 2
+				$('.part-2').html('|||');
+			} else if (game.guessesRemaining < 6) {
+				//todo: draw part 1
+				$('.part-1').html('xxx');
 			}
 
-			$('#gameMessage').html(message);
+			$('#gameMessage').html(message).attr('class',messageClass);
+		}
+
+		function resetHangman() {
+			$('.part').html('');
 		}
 
 		document.onkeyup = function(event) {
 			// Captures the key press, converts it to lowercase, and saves it to a variable.
 			var letter = String.fromCharCode(event.keyCode).toLowerCase();
 
-			//todo: test game state
+			// test game state
 			if (game.gameOver === true || game.gameWon === true) {
 				game.reset();
+				resetHangman();
+				updateUi();
+			} else {
+				// only accept letters - ascii code A-Z and a-z
+				var charTest = letter.charCodeAt(0);
+				if ((charTest > 64 && charTest < 91) || (charTest > 96 && charTest < 123)){
+					// test against guessedLetters
+					game.handleGuess(letter);
+					updateUi();
+				} else {
+					console.log(letter + ' is not a letter');
+				}
 			}
-
-			// test against guessedLetters
-			game.handleGuess(letter);
-
-			updateUi();
 		};
 	</script>
 </body>

@@ -8,7 +8,6 @@ function GameLetter (letter) {
 
 GameLetter.prototype.toString = function() {
 	return this.guessed === true ? this.letter : '_';
-	// return this.letter + ' (' + (this.guessed === true ? 'guessed' : 'not guessed') + ')';
 }
 
 // END GameLetter
@@ -30,7 +29,6 @@ GameWord.prototype.makeLetters = function(word) {
 }
 
 GameWord.prototype.toString = function() {
-	// return this.letters ? this.letters.join(' ') : '';
 	var output = [];
 	for (var x = 0, len = this.letters.length; x < len; x++) {
 		output.push(this.letters[x].toString());
@@ -74,7 +72,7 @@ GameWord.prototype.solve = function() {
 // BEGIN Game
 
 function Game() {
-	this.MAX_GUESS_COUNT = 12;
+	this.MAX_GUESS_COUNT = 6;
 	this.WORDS = 'red,green,blue,yellow,orange,purple,brown,black,white'.split(',');
 
 	this.wins = 0;
@@ -110,7 +108,6 @@ Game.prototype.handleGuess = function(guess) {
 		}
 
 		this.checkGameState();
-		this.updateUi();
 	} else {
 		console.log('you already guessed ' + guess);
 	}
@@ -127,7 +124,7 @@ Game.prototype.checkGameState = function() {
 
 	// check for 0 remaining guesses
 	if (this.guessesRemaining < 1) {
-		console.log('game over guessesRemaining < 1');
+		console.log('game over - guessesRemaining < 1');
 		this.gameOver = true;
 		this.currentWord.solve();
 	}
