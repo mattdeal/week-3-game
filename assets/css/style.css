@@ -7298,35 +7298,3 @@ a.list-group-item-danger.active:focus {
 .part {
   text-align: center;
 }
-
-/*temporary remove this*/
-/*.part-1 {
-  border-style: solid;
-  border-color: red;
-  border-width: 2px;
-}
-.part-2 {
-  border-style: solid;
-  border-color: blue;
-  border-width: 2px;
-}
-.part-3 {
-  border-style: solid;
-  border-color: green;
-  border-width: 2px;
-}
-.part-4 {
-  border-style: solid;
-  border-color: yellow;
-  border-width: 2px;
-}
-.part-5 {
-  border-style: solid;
-  border-color: orange;
-  border-width: 2px;
-}
-.part-6 {
-  border-style: solid;
-  border-color: pink;
-  border-width: 2px;
-}*/
