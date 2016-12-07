@@ -15,7 +15,7 @@
 					<!-- <h1 class="text-center">Hangman</h1> -->
 
 					<div class="text-center">
-						<!-- todo: convert this to an image -->
+						<!-- todo: convert this to an image? -->
 						<!-- http://ascii.co.uk/art/hangman -->
 						<pre class="logo"> _                                             
 | |                                            
@@ -38,7 +38,11 @@
 					<div class="col-md-1 border-bottom">&nbsp;</div>
 					<div class="col-md-1 border-bottom">&nbsp;</div>
 					<div class="col-md-1 border-bottom">&nbsp;</div>
-					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">
+						<div class="row">
+							<div class="col-md-6 border-bottom">&nbsp;</div>
+						</div>
+					</div>
 					<div class="col-md-1">&nbsp;</div>
 					<div class="col-md-1">&nbsp;</div>
 					<div class="col-md-2"></div> <!-- empty -->
@@ -48,8 +52,13 @@
 					<div class="col-md-1 border-right">&nbsp;</div>
 					<div class="col-md-1">&nbsp;</div>
 					<div class="col-md-1">&nbsp;</div>
-					<div class="col-md-1 border-right">&nbsp;</div>
 					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-1">
+						<div class="row">
+							<div class="col-md-6 border-right">&nbsp;</div>
+						</div>
+					</div>
+					<!-- <div class="col-md-1">&nbsp;</div> -->
 					<div class="col-md-1"></div>
 					<div class="col-md-1">&nbsp;</div>
 					<div class="col-md-1">&nbsp;</div>
@@ -60,9 +69,9 @@
 					<div class="col-md-1 border-right">&nbsp;</div>
 					<div class="col-md-1">&nbsp;</div>
 					<div class="col-md-1">&nbsp;</div>
-					<div class="col-md-1">&nbsp;</div>
-					<div class="col-md-1 part part-1">&nbsp;</div>
-					<div class="col-md-1">&nbsp;</div>
+					<!-- <div class="col-md-1">&nbsp;</div> -->
+					<div class="col-md-3 part part-1">&nbsp;</div>
+					<!-- <div class="col-md-1">&nbsp;</div> -->
 					<div class="col-md-1">&nbsp;</div>
 					<div class="col-md-1">&nbsp;</div>
 					<div class="col-md-2"></div> <!-- empty -->
@@ -72,9 +81,9 @@
 					<div class="col-md-1 border-right">&nbsp;</div>
 					<div class="col-md-1">&nbsp;</div>
 					<div class="col-md-1">&nbsp;</div>
-					<div class="col-md-1 part part-1">&nbsp;</div>
-					<div class="col-md-1 part part-1">&nbsp;</div>
-					<div class="col-md-1 part part-1">&nbsp;</div>
+					<!-- <div class="col-md-1 part">&nbsp;</div> -->
+					<div class="col-md-3 part part-1a">&nbsp;</div>
+					<!-- <div class="col-md-1 part">&nbsp;</div> -->
 					<div class="col-md-1">&nbsp;</div>
 					<div class="col-md-1">&nbsp;</div>
 					<div class="col-md-2"></div> <!-- empty -->
@@ -84,9 +93,9 @@
 					<div class="col-md-1 border-right">&nbsp;</div>
 					<div class="col-md-1">&nbsp;</div>
 					<div class="col-md-1 part part-3">&nbsp;</div>
-					<div class="col-md-1">&nbsp;</div>
-					<div class="col-md-1 part part-1">&nbsp;</div>
-					<div class="col-md-1">&nbsp;</div>
+					<!-- <div class="col-md-1">&nbsp;</div> -->
+					<div class="col-md-3 part part-1">&nbsp;</div>
+					<!-- <div class="col-md-1">&nbsp;</div> -->
 					<div class="col-md-1 part part-4">&nbsp;</div>
 					<div class="col-md-1">&nbsp;</div>
 					<div class="col-md-2"></div> <!-- empty -->
@@ -296,23 +305,24 @@
 				message = 'Game Over.  Press any key to play again.';
 				messageClass = 'text-danger';
 
-				//todo: draw part 6
+				// draw part 6
 				$('.part-6').html('\\\\\\');
 			} else if (game.guessesRemaining < 2) {
-				//todo: draw part 5
+				// draw part 5
 				$('.part-5').html('///');
 			} else if (game.guessesRemaining < 3) {
-				//todo: draw part 4
+				// draw part 4
 				$('.part-4').html('///');
 			} else if (game.guessesRemaining < 4) {
-				//todo: draw part 3
+				// draw part 3
 				$('.part-3').html('\\\\\\');
 			} else if (game.guessesRemaining < 5) {
-				//todo: draw part 2
+				// draw part 2
 				$('.part-2').html('|||');
 			} else if (game.guessesRemaining < 6) {
-				//todo: draw part 1
-				$('.part-1').html('xxx');
+				// draw part 1
+				$('.part-1').html('ooooo');
+				$('.part-1a').html('ooooo');
 			}
 
 			$('#gameMessage').html(message).attr('class',messageClass);
